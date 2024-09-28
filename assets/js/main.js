@@ -11,7 +11,7 @@ const showMenu = (toggleId, navId) =>{
 }
 showMenu('nav-toggle','nav-menu')
 
-/* AUTOMATIC SLIDESHOW */
+/* MANUAL SLIDESHOW NAVIGATION */
 const images = document.querySelectorAll('.skills__img');
 let currentIndex = 0;
 
@@ -21,11 +21,14 @@ function showImage(index) {
   images[currentIndex].classList.add('active');
 }
 
-function nextImage() {
+document.getElementById('next').addEventListener('click', () => {
   showImage((currentIndex + 1) % images.length);
-}
+});
 
-setInterval(nextImage, 3000);
+document.getElementById('prev').addEventListener('click', () => {
+  showImage((currentIndex - 1 + images.length) % images.length);
+});
+
 
 /* REMOVE MENU MOBILE */
 const navLink = document.querySelectorAll('.nav__link')

@@ -369,22 +369,64 @@ img {
   height: 300px;
   overflow: hidden;
 }
+
 button.prev, button.next {
-  position: absolute;
+  position: flex;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(255, 255, 255, 0.5);
   color: white;
   border: none;
-  padding: 1rem;
+  padding: 3rem;
   cursor: pointer;
 }
+
 button.prev {
   left: 0;
 }
 button.next {
   right: 0;
 }
+
+.skills__img-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.skills__arrow {
+  font-size: 48px; /* Perbesar ukuran font */
+  color: #333;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  padding: 20px; /* Tambahkan padding untuk memperbesar area klik */
+}
+
+#prev {
+  left: -50px; /* Pindahkan panah kiri di luar gambar */
+}
+
+#next {
+  right: -50px; /* Pindahkan panah kanan di luar gambar */
+}
+
+.skills__arrow:hover {
+  color: #555;
+}
+
+.skills__img {
+  display: none;
+  max-width: 100%;
+}
+
+.skills__img.active {
+  display: block;
+}
+
 
 /* PORTOFOLIO */
 .work__container {
